@@ -38,13 +38,13 @@
     CGFloat articleHeigth = [UILabel_LabelHeight getHeightByWidth:size.width title:model.article font:[UIFont systemFontOfSize:14.0]];
     UIImage *image = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey: model.picture];
     CGFloat imageHight = image.size.height * contextSize.width / image.size.width;
+//    NSLog(@"--%lf--", imageHight);
     // 64 时间高度
     // 95 各个控件间距和 + 底部按钮
     // 64 固定图片高度
     if (image == nil) {
         imageHight = 100;
     }
-//    NSLog(@"计算：%lf %lf %lf %lf %@", labelHeigth, titleHeigth, articleHeigth, imageHight, image);
     return labelHeigth + titleHeigth + articleHeigth + imageHight + 110; //+ 64;
 }
 
@@ -80,6 +80,7 @@
         [self.contentView addSubview:_forwardBtn];
         
         self.picture = [[UIButton alloc] init];
+        self.picture.userInteractionEnabled = NO;
         [self.contentView addSubview:_picture];
     }
     

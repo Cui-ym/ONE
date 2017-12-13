@@ -8,14 +8,30 @@
 
 #import "ONENewsContentViewController.h"
 
+#import <Masonry.h>
+
 @interface ONENewsContentViewController ()
 
 @end
 
 @implementation ONENewsContentViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    self.tabBarController.tabBar.hidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    self.tabBarController.tabBar.hidden = NO;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.webView = [[WKWebView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    NSMutableURLRequest *request =[NSMutableURLRequest requestWithURL:[NSURL URLWithString:_webString]];
+    [_webView loadRequest:request];
+    NSLog(@"%@", _webString);
+    [self.view addSubview:_webView];
     // Do any additional setup after loading the view.
 }
 

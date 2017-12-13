@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 
 @interface ONENewsContentViewController : UIViewController
+
+@property (nonatomic, copy) NSString *webString;
+@property (nonatomic, strong)WKWebView *webView;
 
 @end

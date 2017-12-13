@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ONEHomeViewController.h"
 #import "ONEMineViewController.h"
+#import "ONENewsViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,16 +22,18 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     ONEHomeViewController *homeView = [[ONEHomeViewController alloc] init];
+    ONENewsViewController *newsView = [[ONENewsViewController alloc] init];
     ONEMineViewController *mineView = [[ONEMineViewController alloc] init];
     
     UINavigationController *homeNav = [[UINavigationController alloc] initWithRootViewController:homeView];
-    UINavigationController *movieNav = [[UINavigationController alloc] initWithRootViewController:mineView];
+    UINavigationController *newsNav = [[UINavigationController alloc] initWithRootViewController:newsView];
+    UINavigationController *mineNav = [[UINavigationController alloc] initWithRootViewController:mineView];
     
-    NSArray *array = [NSArray arrayWithObjects:@"首页", @"我的", nil];
+    NSArray *array = [NSArray arrayWithObjects:@"首页", @"新闻", @"我的", nil];
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.edgesForExtendedLayout = UIRectEdgeNone;
-    tabBarController.viewControllers = [NSArray arrayWithObjects:homeNav, movieNav, nil];
+    tabBarController.viewControllers = [NSArray arrayWithObjects:homeNav, newsNav, mineNav, nil];
     int i = 0;
     for (UITabBarItem *item in tabBarController.tabBar.items) {
         item.title = array[i++];

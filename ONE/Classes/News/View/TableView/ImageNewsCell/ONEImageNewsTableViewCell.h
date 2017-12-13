@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ONENewsModel.h"
 
 @interface ONEImageNewsTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) UILabel *titleLab;
+@property (nonatomic, strong) UIImageView *newsImageView;
+@property (nonatomic, strong) UILabel *datailLab;
+@property (nonatomic, strong) UILabel *timeLab;
+
+
++(CGFloat)cellModel:(ONENewsItemModel *)model size:(CGSize)contextSize;
 
 @end

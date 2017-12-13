@@ -53,10 +53,18 @@
 		58A728751FAB45ED00C93B00 /* ONEHomeDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A728721FAB45ED00C93B00 /* ONEHomeDayViewController.m */; };
 		58A728761FAB45ED00C93B00 /* ONEHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A728741FAB45ED00C93B00 /* ONEHomeViewController.m */; };
 		58AF29201FAF0CD5002FFA63 /* ONEMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AF291F1FAF0CD5002FFA63 /* ONEMineViewController.m */; };
+		58B4189A1FD95DE800A1CFBC /* ONENewsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B418991FD95DE800A1CFBC /* ONENewsTableView.m */; };
+		58B4189E1FD9662900A1CFBC /* ONEImageNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B4189D1FD9662900A1CFBC /* ONEImageNewsTableViewCell.m */; };
+		58B418A11FD96C5800A1CFBC /* ONENewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B418A01FD96C5800A1CFBC /* ONENewsModel.m */; };
+		58B418A51FD97F6200A1CFBC /* ONENewsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B418A41FD97F6200A1CFBC /* ONENewsManager.m */; };
 		58B7E95B1F8778750038DC6E /* UILabel+LabelHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B7E95A1F8778750038DC6E /* UILabel+LabelHeight.m */; };
 		58C9E84A1FD27E8300DB8217 /* ONEAnswerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E8491FD27E8300DB8217 /* ONEAnswerTableViewCell.m */; };
+		58CB6C761FD6DDF5005F1D30 /* ONENewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CB6C751FD6DDF5005F1D30 /* ONENewsViewController.m */; };
+		58CB6C791FD6E593005F1D30 /* ONENewsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CB6C781FD6E593005F1D30 /* ONENewsView.m */; };
 		58E4B19C1FB2D50D005DE923 /* ONESetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E4B19B1FB2D50D005DE923 /* ONESetTableViewCell.m */; };
 		58E4B1A21FB43376005DE923 /* ONEPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E4B1A11FB43376005DE923 /* ONEPickerView.m */; };
+		58E7971B1FDEA1000011DB73 /* ONEWordsNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E7971A1FDEA1000011DB73 /* ONEWordsNewsTableViewCell.m */; };
+		58E7971E1FDECA7C0011DB73 /* ONENewsContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E7971D1FDECA7C0011DB73 /* ONENewsContentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,14 +169,30 @@
 		58A728741FAB45ED00C93B00 /* ONEHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEHomeViewController.m; sourceTree = "<group>"; };
 		58AF291E1FAF0CD5002FFA63 /* ONEMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ONEMineViewController.h; sourceTree = "<group>"; };
 		58AF291F1FAF0CD5002FFA63 /* ONEMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ONEMineViewController.m; sourceTree = "<group>"; };
+		58B418981FD95DE800A1CFBC /* ONENewsTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ONENewsTableView.h; sourceTree = "<group>"; };
+		58B418991FD95DE800A1CFBC /* ONENewsTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ONENewsTableView.m; sourceTree = "<group>"; };
+		58B4189C1FD9662900A1CFBC /* ONEImageNewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ONEImageNewsTableViewCell.h; sourceTree = "<group>"; };
+		58B4189D1FD9662900A1CFBC /* ONEImageNewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ONEImageNewsTableViewCell.m; sourceTree = "<group>"; };
+		58B4189F1FD96C5800A1CFBC /* ONENewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ONENewsModel.h; sourceTree = "<group>"; };
+		58B418A01FD96C5800A1CFBC /* ONENewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ONENewsModel.m; sourceTree = "<group>"; };
+		58B418A31FD97F6200A1CFBC /* ONENewsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ONENewsManager.h; sourceTree = "<group>"; };
+		58B418A41FD97F6200A1CFBC /* ONENewsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ONENewsManager.m; sourceTree = "<group>"; };
 		58B7E9591F8778750038DC6E /* UILabel+LabelHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHeight.h"; sourceTree = "<group>"; };
 		58B7E95A1F8778750038DC6E /* UILabel+LabelHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+LabelHeight.m"; sourceTree = "<group>"; };
 		58C9E8481FD27E8300DB8217 /* ONEAnswerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ONEAnswerTableViewCell.h; sourceTree = "<group>"; };
 		58C9E8491FD27E8300DB8217 /* ONEAnswerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ONEAnswerTableViewCell.m; sourceTree = "<group>"; };
+		58CB6C741FD6DDF5005F1D30 /* ONENewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ONENewsViewController.h; sourceTree = "<group>"; };
+		58CB6C751FD6DDF5005F1D30 /* ONENewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ONENewsViewController.m; sourceTree = "<group>"; };
+		58CB6C771FD6E593005F1D30 /* ONENewsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ONENewsView.h; sourceTree = "<group>"; };
+		58CB6C781FD6E593005F1D30 /* ONENewsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ONENewsView.m; sourceTree = "<group>"; };
 		58E4B19A1FB2D50D005DE923 /* ONESetTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ONESetTableViewCell.h; sourceTree = "<group>"; };
 		58E4B19B1FB2D50D005DE923 /* ONESetTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ONESetTableViewCell.m; sourceTree = "<group>"; };
 		58E4B1A01FB43376005DE923 /* ONEPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ONEPickerView.h; sourceTree = "<group>"; };
 		58E4B1A11FB43376005DE923 /* ONEPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ONEPickerView.m; sourceTree = "<group>"; };
+		58E797191FDEA1000011DB73 /* ONEWordsNewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ONEWordsNewsTableViewCell.h; sourceTree = "<group>"; };
+		58E7971A1FDEA1000011DB73 /* ONEWordsNewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ONEWordsNewsTableViewCell.m; sourceTree = "<group>"; };
+		58E7971C1FDECA7C0011DB73 /* ONENewsContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ONENewsContentViewController.h; sourceTree = "<group>"; };
+		58E7971D1FDECA7C0011DB73 /* ONENewsContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ONENewsContentViewController.m; sourceTree = "<group>"; };
 		780BAA1EE0C545D971F08920 /* Pods-ONE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ONE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ONE/Pods-ONE.debug.xcconfig"; sourceTree = "<group>"; };
 		F56D64CDA68C713FB19992C7 /* libPods-ONE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ONE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -443,6 +467,15 @@
 			path = contentCell;
 			sourceTree = "<group>";
 		};
+		58662B2E1FD7E602000FD143 /* NewsView */ = {
+			isa = PBXGroup;
+			children = (
+				58CB6C771FD6E593005F1D30 /* ONENewsView.h */,
+				58CB6C781FD6E593005F1D30 /* ONENewsView.m */,
+			);
+			path = NewsView;
+			sourceTree = "<group>";
+		};
 		58755EB61F80C6CC0066D9BC = {
 			isa = PBXGroup;
 			children = (
@@ -508,6 +541,7 @@
 			isa = PBXGroup;
 			children = (
 				58755F0C1F80CB060066D9BC /* Home */,
+				58CB6C701FD6DD7C005F1D30 /* News */,
 				58AF291A1FAF0CB4002FFA63 /* Mine */,
 				58755F121F80CB060066D9BC /* Other */,
 			);
@@ -639,6 +673,36 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		58B418971FD95D8300A1CFBC /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				58B418981FD95DE800A1CFBC /* ONENewsTableView.h */,
+				58B418991FD95DE800A1CFBC /* ONENewsTableView.m */,
+				58B4189B1FD9660500A1CFBC /* ImageNewsCell */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		58B4189B1FD9660500A1CFBC /* ImageNewsCell */ = {
+			isa = PBXGroup;
+			children = (
+				58B4189C1FD9662900A1CFBC /* ONEImageNewsTableViewCell.h */,
+				58B4189D1FD9662900A1CFBC /* ONEImageNewsTableViewCell.m */,
+				58E797191FDEA1000011DB73 /* ONEWordsNewsTableViewCell.h */,
+				58E7971A1FDEA1000011DB73 /* ONEWordsNewsTableViewCell.m */,
+			);
+			path = ImageNewsCell;
+			sourceTree = "<group>";
+		};
+		58B418A21FD97F3000A1CFBC /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				58B418A31FD97F6200A1CFBC /* ONENewsManager.h */,
+				58B418A41FD97F6200A1CFBC /* ONENewsManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		58B7E9521F8776790038DC6E /* LabelHeight */ = {
 			isa = PBXGroup;
 			children = (
@@ -657,6 +721,46 @@
 				58069E7B1FAC84A9007F598E /* anwersModel */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		58CB6C701FD6DD7C005F1D30 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				58B418A21FD97F3000A1CFBC /* Manager */,
+				58CB6C721FD6DD7C005F1D30 /* Model */,
+				58CB6C711FD6DD7C005F1D30 /* Controller */,
+				58CB6C731FD6DD7C005F1D30 /* View */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		58CB6C711FD6DD7C005F1D30 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				58CB6C741FD6DDF5005F1D30 /* ONENewsViewController.h */,
+				58CB6C751FD6DDF5005F1D30 /* ONENewsViewController.m */,
+				58E7971C1FDECA7C0011DB73 /* ONENewsContentViewController.h */,
+				58E7971D1FDECA7C0011DB73 /* ONENewsContentViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		58CB6C721FD6DD7C005F1D30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				58B4189F1FD96C5800A1CFBC /* ONENewsModel.h */,
+				58B418A01FD96C5800A1CFBC /* ONENewsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		58CB6C731FD6DD7C005F1D30 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				58662B2E1FD7E602000FD143 /* NewsView */,
+				58B418971FD95D8300A1CFBC /* TableView */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		58E4B1991FB2D47A005DE923 /* setCell */ = {
@@ -838,9 +942,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ONE/Pods-ONE-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -876,6 +983,8 @@
 				58B7E95B1F8778750038DC6E /* UILabel+LabelHeight.m in Sources */,
 				58E4B19C1FB2D50D005DE923 /* ONESetTableViewCell.m in Sources */,
 				581513801FACB1A00028A959 /* ONEHomeModel.m in Sources */,
+				58E7971E1FDECA7C0011DB73 /* ONENewsContentViewController.m in Sources */,
+				58CB6C761FD6DDF5005F1D30 /* ONENewsViewController.m in Sources */,
 				581513A41FACB65D0028A959 /* ONESerialView.m in Sources */,
 				5843F9C51FC6F15900C1AD3A /* ONECollectionInstance.m in Sources */,
 				58E4B1A21FB43376005DE923 /* ONEPickerView.m in Sources */,
@@ -884,6 +993,7 @@
 				581513841FACB1E30028A959 /* ONEArticleView.m in Sources */,
 				581513A01FACB4E80028A959 /* ONESerialModel.m in Sources */,
 				58A728751FAB45ED00C93B00 /* ONEHomeDayViewController.m in Sources */,
+				58CB6C791FD6E593005F1D30 /* ONENewsView.m in Sources */,
 				5804EA281FB1DC36005B72C9 /* ONECollectionTableViewCell.m in Sources */,
 				58A728761FAB45ED00C93B00 /* ONEHomeViewController.m in Sources */,
 				5815139C1FACB49E0028A959 /* ONESerialViewController.m in Sources */,
@@ -895,18 +1005,23 @@
 				58755EC71F80C6CC0066D9BC /* AppDelegate.m in Sources */,
 				5804EA221FB17092005B72C9 /* ONEMineView.m in Sources */,
 				58069E7E1FAC84CF007F598E /* ONEAnwersModel.m in Sources */,
+				58B418A51FD97F6200A1CFBC /* ONENewsManager.m in Sources */,
 				58755EC41F80C6CC0066D9BC /* main.m in Sources */,
 				5815138F1FACB1EA0028A959 /* ONEHomeView.m in Sources */,
 				5843F9B81FC5659700C1AD3A /* ONECollectionView.m in Sources */,
 				58C9E84A1FD27E8300DB8217 /* ONEAnswerTableViewCell.m in Sources */,
 				5856D3B21FCCFD6400AB6944 /* ONEContentTableViewCell.m in Sources */,
+				58E7971B1FDEA1000011DB73 /* ONEWordsNewsTableViewCell.m in Sources */,
 				58069E7A1FAC838F007F598E /* ONEAnwersViewController.m in Sources */,
+				58B4189A1FD95DE800A1CFBC /* ONENewsTableView.m in Sources */,
 				5804EA351FB1E881005B72C9 /* MYButton.m in Sources */,
 				5804EA231FB17092005B72C9 /* ONEPersonalTableViewCell.m in Sources */,
 				5815138D1FACB1EA0028A959 /* ONEFirstCellModel.m in Sources */,
 				58AF29201FAF0CD5002FFA63 /* ONEMineViewController.m in Sources */,
 				58069E821FAC8804007F598E /* ONEAnwersView.m in Sources */,
+				58B4189E1FD9662900A1CFBC /* ONEImageNewsTableViewCell.m in Sources */,
 				5843F9C01FC6C07300C1AD3A /* ONECollectionViewController.m in Sources */,
+				58B418A11FD96C5800A1CFBC /* ONENewsModel.m in Sources */,
 				58A7286F1FAB45E000C93B00 /* ONEArticleViewController.m in Sources */,
 				581513951FACB2CB0028A959 /* ONEMainCellModel.m in Sources */,
 			);
@@ -1006,7 +1121,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1048,7 +1163,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

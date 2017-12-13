@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ONENewsModel.h"
 
 @interface ONEWordsNewsTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) UILabel *titleLab;
+@property (nonatomic, strong) UIImageView *newsImageView;
+@property (nonatomic, strong) UILabel *datailLab;
+@property (nonatomic, strong) UILabel *timeLab;
 
 @end

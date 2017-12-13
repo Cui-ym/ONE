@@ -10,4 +10,8 @@
 
 @interface ONENewsManager : NSObject
 
+- (void)doGet:(NSString *_Nullable)style
+      success:(void (^_Nullable)(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject))success
+      failure:(void (^_Nullable)(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error))failure;
+
 @end

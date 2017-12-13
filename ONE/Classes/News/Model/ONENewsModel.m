@@ -7,7 +7,16 @@
 //
 
 #import "ONENewsModel.h"
+#import <AFNetworking.h>
 
 @implementation ONENewsModel
 
+@end
+@implementation ONENewsItemModel
+@end
+
+@implementation ONENewsDataModel
+@end
+
+@implementation ONENewsDataListModel
 @end

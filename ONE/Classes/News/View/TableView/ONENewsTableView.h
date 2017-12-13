@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ONENewsModel.h"
 
-@interface ONENewsTableView : UITableView
+@protocol ONENewsTableViewDelegate<NSObject>
+
+- (void)didSelectedCell:(NSString *)content;
+
+@end
+
+@interface ONENewsTableView : UITableView <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, weak) id<ONENewsTableViewDelegate> newsDelegate;
+@property (nonatomic, copy) NSArray<ONENewsItemModel> *newsArray;
+@property (nonatomic, strong) NSMutableArray *heightArray;
+
+- (void)calculateHeight;
 
 @end

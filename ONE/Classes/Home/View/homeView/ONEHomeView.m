@@ -9,9 +9,9 @@
 #import "ONEHomeView.h"
 #import "ONEMainCellModel.h"
 #import "ONEFirstCellModel.h"
+#import "UILabel+LabelHeight.h"
 
 #import <Masonry.h>
-#import <UIImageView+WebCache.h>
 #import <SDWebImage/UIButton+WebCache.h>
 #import <UIImageView+WebCache.h>
 
@@ -21,6 +21,8 @@
 @implementation ONEHomeView
 {
     NSArray *array;
+    // 记录是否计算高度
+    int flag;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -41,66 +43,78 @@
 
 // 计算高度
 - (void)calculateHeight {
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self addSubview:imageView];
+    // 下载照片
     NSURL *url = [NSURL URLWithString:_firstModel.picture];
-    UIImageView *imageView = [[UIImageView alloc] init];
-    [imageView sd_setImageWithURL:url completed:nil];
-    
-    CGFloat one = [ONEFirstTableViewCell cellModel:_firstModel size:CGSizeMake(self.frame.size.width, 0)];
-    CGFloat two = [ONEMainTableViewCell cellHeight:_firstMainModel size:CGSizeMake(self.frame.size.width, 0)];
-    CGFloat three = [ONEMainTableViewCell cellHeight:_secondMainModel size:CGSizeMake(self.frame.size.width, 0)];
-    CGFloat four = [ONEMainTableViewCell cellHeight:_thridMainModel size:CGSizeMake(self.frame.size.width, 0)];
-    CGFloat five = [ONEMainTableViewCell cellHeight:_fourthMainModel size:CGSizeMake(self.frame.size.width, 0)];
-    CGFloat six = [ONEMainTableViewCell cellHeight:_fifthMainModel size:CGSizeMake(self.frame.size.width, 0)];
-    CGFloat seven = [ONEMainTableViewCell cellHeight:_sixMainModel size:CGSizeMake(self.frame.size.width, 0)];
-//    NSLog(@"%lf %lf %lf %lf %lf", one, two, three, four, five);
-    
-    NSNumber *oneCell = [NSNumber numberWithFloat:one];
-    NSNumber *twoCell = [NSNumber numberWithFloat:two];
-    NSNumber *threeCell = [NSNumber numberWithFloat:three];
-    NSNumber *fourCell = [NSNumber numberWithFloat:four];
-    NSNumber *fiveCell = [NSNumber numberWithFloat:five];
-    NSNumber *sixCell = [NSNumber numberWithFloat:six];
-    NSNumber *sevenCell = [NSNumber numberWithFloat:seven];
-    
-//    [_button sd_setBackgroundImageWithURL:url forState:UIControlStateNormal completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-//        CGFloat imageHeight = image.size.height * self.frame.size.width / image.size.width;
-//    }];
-    
-    array = [NSArray arrayWithObjects:oneCell, twoCell, threeCell, fourCell, fiveCell, sixCell, sevenCell, nil];
-    _btnStatusArr = [NSMutableArray array];
-    
+    [imageView sd_setImageWithURL:url completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        [[SDImageCache sharedImageCache] storeImage:image forKey:_firstModel.picture toDisk:YES completion:^{
+            
+            CGFloat one = [ONEFirstTableViewCell cellModel:_firstModel size:CGSizeMake(self.frame.size.width, 0)];
+            CGFloat two = [ONEMainTableViewCell cellHeight:_firstMainModel size:CGSizeMake(self.frame.size.width, 0)];
+            CGFloat three = [ONEMainTableViewCell cellHeight:_secondMainModel size:CGSizeMake(self.frame.size.width, 0)];
+            CGFloat four = [ONEMainTableViewCell cellHeight:_thridMainModel size:CGSizeMake(self.frame.size.width, 0)];
+            CGFloat five = [ONEMainTableViewCell cellHeight:_fourthMainModel size:CGSizeMake(self.frame.size.width, 0)];
+            CGFloat six = [ONEMainTableViewCell cellHeight:_fifthMainModel size:CGSizeMake(self.frame.size.width, 0)];
+            CGFloat seven = [ONEMainTableViewCell cellHeight:_sixMainModel size:CGSizeMake(self.frame.size.width, 0)];
+            
+            NSNumber *oneCell = [NSNumber numberWithFloat:one];
+            NSNumber *twoCell = [NSNumber numberWithFloat:two];
+            NSNumber *threeCell = [NSNumber numberWithFloat:three];
+            NSNumber *fourCell = [NSNumber numberWithFloat:four];
+            NSNumber *fiveCell = [NSNumber numberWithFloat:five];
+            NSNumber *sixCell = [NSNumber numberWithFloat:six];
+            NSNumber *sevenCell = [NSNumber numberWithFloat:seven];
+            
+            array = [NSArray arrayWithObjects:oneCell, twoCell, threeCell, fourCell, fiveCell, sixCell, sevenCell, nil];
+            flag = 1;
+//            NSLog(@"%@ %p %lf", array[0], self, image.size.height);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [_tableView reloadData];
+            });
+            
+        }];
+        [imageView removeFromSuperview];
+    }];
     // 初始化按钮的状态数组
+    _btnStatusArr = [NSMutableArray array];
     for (int i = 0; i < _number - 1; i++) {
         [self.btnStatusArr addObject:@"0"];
     }
     
-    _tableView.dataSource = self;
-    
-    [_tableView setDelegate:self];
-//    NSLog(@"%@", _tableView.delegate);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if (flag == 0) {
+        return 0;
+    }
+//    NSLog(@"%ld", _number);
     return _number;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (flag == 0) {
+        return 0;
+    }
+//    NSLog(@"num");
     return 1;
 }
 
 // 计算高度
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"%ld", (long)indexPath.section);
-//    NSLog(@"number%ld", _number);
-//    NSLog(@"%lf", [array[indexPath.section] floatValue]);
+//    NSLog(@"==%@==", array[indexPath.section]);
     return [array[indexPath.section] floatValue];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    NSLog(@"H");
     return 0.1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+//    NSLog(@"F");
     return 5;
 }
 
@@ -115,7 +129,6 @@
 // 设置 cell 的内容
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section != 0) {
-//        NSLog(@"%@ section:%ld", _btnStatusArr[indexPath.section - 1], indexPath.section);
         _MainCell = [tableView dequeueReusableCellWithIdentifier:MAIN_CELL forIndexPath:indexPath];
         _MainCell.selectionStyle = UITableViewCellSelectionStyleNone;
         _MainCell.delegate = self;
@@ -126,16 +139,16 @@
         _firstCell.selectionStyle = UITableViewCellSelectionStyleNone;
         [_firstCell setModel:_firstModel];
         _firstCell.delegate = self;
-//        _firstCell.time.text = _firstModel.time;
         _firstCell.label.text = _firstModel.label;
         _firstCell.title.text = _firstModel.title;
         _firstCell.articleLab.text = _firstModel.article;
-        NSURL *url = [NSURL URLWithString:_firstModel.picture];
-        [_firstCell.picture sd_setBackgroundImageWithURL:url forState:UIControlStateNormal completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-            CGFloat imageHeight = image.size.height * self.frame.size.width / image.size.width;
-            [_firstCell.picture mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.height.mas_equalTo(imageHeight);
-            }];
+        // 在内存中获取image
+        UIImage *image = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:_firstModel.picture];
+        [_firstCell.picture setBackgroundImage:image forState:UIControlStateNormal];
+        CGFloat imageHeight = image.size.height * self.frame.size.width / image.size.width;
+        [_firstCell.picture mas_updateConstraints:^(MASConstraintMaker *make) {
+            //                NSLog(@"%lf", imageHeight);
+            make.height.mas_equalTo(imageHeight);
         }];
         return _firstCell;
     } else if (indexPath.section == 1) {
@@ -175,11 +188,9 @@
     } else if ([model.item_id isEqualToString:_sixMainModel.item_id]) {
         _btnStatusArr[5] = [_btnStatusArr[5]  isEqual: @"0"] ? @"1" : @"0";
     }
-//    NSLog(@"%@ %@", type, item);
     if (button.selected == NO) {
         [button setSelected:YES];
         if ([_delegate respondsToSelector:@selector(collectType: model:)]) {
-//            NSLog(@"执行收藏方法");
             [self.delegate collectType:type model:model];
         }
     } else {
@@ -194,7 +205,6 @@
     if (button.selected == NO) {
         [button setSelected:YES];
         if ([_delegate respondsToSelector:@selector(collectPictureModel: title:)]) {
-            //            NSLog(@"执行收藏方法");
             [self.delegate collectPictureModel:model title:title];
         }
     } else {

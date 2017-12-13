@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ONENewsView.h"
 
 @interface ONENewsViewController : UIViewController
+
+@property (nonatomic, strong) ONENewsView *newsView;
+@property (nonatomic, copy) NSArray *array;
 
 @end

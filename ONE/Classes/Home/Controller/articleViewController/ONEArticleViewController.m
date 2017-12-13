@@ -54,6 +54,7 @@
     _articleView.title = [notification.userInfo objectForKey:@"title"];
     _articleView.author = [NSString stringWithFormat:@"作者：%@", [notification.userInfo objectForKey:@"author"]];
     _articleView.webString = [notification.userInfo objectForKey:@"article"];
+    NSLog(@"%@", _articleView.webString);
     [_articleView.webView loadHTMLString:_articleView.webString baseURL:nil];
     if (flag == 1) {
         [self.view addSubview:_articleView];
